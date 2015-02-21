@@ -1,14 +1,3 @@
-/*
- * TODO: add different dist for dev e.g. 'dev-dist'
- * TODO: ensure alljs files are include in html page when not concat into one
- * TODO: Add revisioning to images [prod]
- * TODO: Add revisioning to js [prod]
- * TODO: Modify HTML with revision url for images
- * TODO: Modify CSS with revision url for images
- * TODO: Modify JS with revision url for images
- * TODO: Try to change output folder names e.g. '/images' => '/i' and map files
- * */
-
 /*********************************************************************************
  0. GLOBALS
  *********************************************************************************/
