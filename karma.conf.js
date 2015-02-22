@@ -4,7 +4,6 @@ module.exports = function (config) {
     basePath: __dirname,
     frameworks: ['jasmine'],
     files: [
-      'src/js/app.js',
       'src/js/**/*.js',
       'src/js/**/*.spec.js'
     ],

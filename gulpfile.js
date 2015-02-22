@@ -1,6 +1,7 @@
 /*********************************************************************************
  0. GLOBALS
  *********************************************************************************/
+
 var onError = function (err) {
   gutil.log(gutil.colors.red(err.plugin) + ': ' + gutil.colors.yellow(err.message));
   gutil.beep();
@@ -39,7 +40,7 @@ var runSequence = require('run-sequence');              // tasks in sequence
 /*********************************************************************************
  2. FILE DESTINATIONS (RELATIVE TO ASSETS FOLDER) AND ENVIRONMENT
  *********************************************************************************/
-//process.env.NODE_ENV = 'prod';
+
 var env = process.env.NODE_ENV || 'dev';                // set env - 'prod' or 'dev'
 var target = {
   src_index: 'src/index.html',                          // main source file
