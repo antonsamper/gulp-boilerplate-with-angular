@@ -8,7 +8,6 @@ To start using the boilerplate, run `npm i` and `bower i` and the  run one of th
 * `gulp test` (karma only task)
 
 ## Todo/Coming Soon
-* Upgrade Browser Sync to v2.0
 * Add different dist for dev e.g. 'dev-dist'
 * Add revisioning to images on production
 * Modify HTML with revision url for images
