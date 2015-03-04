@@ -17,7 +17,6 @@ var browserSync = require('browser-sync');              // inject code to all de
 var del = require('del');                               // delete files and folders
 var gulp = require('gulp');                             // gulp core
 var autoprefixer = require('gulp-autoprefixer');        // sets browser prefixes
-var bump = require('gulp-bump');                        // bumps version
 var concat = require('gulp-concat');                    // file concatenation
 var csso = require('gulp-csso');                        // advanced css minification
 var debug = require('gulp-debug');                      // debug mode
@@ -37,6 +36,25 @@ var gutil = require('gulp-util');                       // gulp utilities
 var stylish = require('jshint-stylish');                // style for jshint errors
 var bowerFiles = require('main-bower-files');           // bower modules includes
 var runSequence = require('run-sequence');              // tasks in sequence
+
+
+
+/*
+ gulpfile.js
+ ===========
+ Rather than manage one giant configuration file responsible
+ for creating multiple tasks, each task has been broken out into
+ its own file in gulp/tasks. Any files in that directory get
+ automatically required below.
+ To add a new task, simply add a new task file that directory.
+ gulp/tasks/default.js specifies the default set of tasks to run
+ when you run `gulp`.
+ */
+
+var requireDir = require('require-dir');
+
+// Require all tasks in gulp/tasks, including subfolders
+requireDir('./gulp/tasks', { recurse: true });
 
 
 /*********************************************************************************
@@ -204,32 +222,6 @@ gulp.task('unit-tests', function () {
     configFile: __dirname + '/karma.conf.js',
     singleRun: runType
   });
-});
-
-
-/*********************************************************************************
- 11. VERSIONING
- *********************************************************************************/
-
-var versionBump = function (type) {
-  return gulp
-    .src(target.app_json)                               // files to bump
-    .pipe(bump({                                        // bump version on release
-      type: type
-    }))
-    .pipe(gulp.dest('./'));
-};
-
-gulp.task('major-version-bump', function () {
-  versionBump('major');
-});
-
-gulp.task('minor-version-bump', function () {
-  versionBump('minor');
-});
-
-gulp.task('patch-version-bump', function () {
-  versionBump('patch');
 });
 
 
