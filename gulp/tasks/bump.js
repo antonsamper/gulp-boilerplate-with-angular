@@ -11,18 +11,17 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var gulp = require('gulp');                             // gulp core
-var bump = require('gulp-bump');                        // bumps version
+var gulp = require('gulp');
+var bump = require('gulp-bump');
 
 
 /*********************************************************************************
- 2. TASKS
+ 2. TASK
  *********************************************************************************/
 
 gulp.task('bump', function () {
-  var files = ['./bower.json', './package.json'];
   return gulp
-    .src(files)
+    .src(['./bower.json', './package.json'])
     .pipe(bump({
       type: process.env.type
     }))
