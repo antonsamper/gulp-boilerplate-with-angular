@@ -5,8 +5,8 @@ To start using the boilerplate, run `npm i` and `bower i` and the  run one of th
 
 
 ###### Tasks
-* `gulp` (default/release task)(asset revisions, minification and karma single run)
-* `gulp dev` (development task)(watch, karma ci and browser sync)
+* `gulp` (default/release task) (asset revisions, minification and karma single run)
+* `gulp dev` (development task) (watch, karma ci and browser sync)
 * `gulp test` (karma only task)
 
 
@@ -28,3 +28,4 @@ The version bumping tasks should be used before you commit code that will be rel
 
 ## Coming Soon
 * Upgrade to gulp.js 4.0
+* Add `watchify` module for super fast browser sync
