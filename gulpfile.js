@@ -40,10 +40,13 @@ var runSequence = require('run-sequence');              // tasks in sequence
 
 
 /*********************************************************************************
- 2. FILE DESTINATIONS (RELATIVE TO ASSETS FOLDER) AND ENVIRONMENT
+ 2. CONFIG AND FILE DESTINATIONS (RELATIVE TO ASSETS FOLDER)
  *********************************************************************************/
 
-var env = process.env.NODE_ENV || 'dev';                // set env - 'prod' or 'dev'
+var config = {                                          // set environment
+  env: 'prod'
+};
+
 var target = {
   app_json: [                                           // app related files
     './bower.json',
@@ -88,8 +91,8 @@ gulp.task('scss', function () {
     .pipe(sass())                                       // compile all scss
     .pipe(sourcemaps.write())                           // write out the sourcemaps
     .pipe(autoprefixer('last 2 version'))               // add vendor prefixes
-    .pipe(gulpif(env === 'prod', csso()))               // minify css [prod]
-    .pipe(gulpif(env === 'prod', rev()))                // apply revision [prod]
+    .pipe(gulpif(config.env !== 'dev', csso()))         // minify css
+    .pipe(gulpif(config.env !== 'dev', rev()))          // apply revision
     .pipe(gulp.dest(target.scss_output))                // output files
     .pipe(browserSync.reload({stream: true}));          // browser sync reload
 });
@@ -116,9 +119,9 @@ gulp.task('js-concat', function () {
     .pipe(plumber({                                     // keep running on errors
       errorHandler: onError
     }))
-    .pipe(gulpif(env === 'prod', uglify()))             // uglify the files [prod]
-    .pipe(gulpif(env === 'prod', concat('app.min.js'))) // concat to one file [prod]
-    .pipe(gulpif(env === 'prod', rev()))                // apply revision [prod]
+    .pipe(gulpif(config.env !== 'dev', uglify()))       // uglify the files
+    .pipe(gulpif(config.env !== 'dev', concat('app.min.js')))  // concat to one file
+    .pipe(gulpif(config.env !== 'dev', rev()))          // apply revision
     .pipe(gulp.dest(target.output_js_dir))              // output files
     .pipe(browserSync.reload({stream: true}));          // browser sync reload
 });
@@ -135,15 +138,15 @@ gulp.task('html', function () {
     .pipe(plumber({                                     // keep running on errors
       errorHandler: onError
     }))
-    .pipe(inject(gulp.src(files, {read: false}), {     // injected files options
+    .pipe(inject(gulp.src(files, {read: false}), {      // injected files options
       ignorePath: 'dist',
       addRootSlash: false
     }))
-    .pipe(minifyHtml({                                  // minify html options
+    .pipe(gulpif(config.env !== 'dev', minifyHtml({     // minify html options
       empty: true,
       spare: true,
       quotes: true
-    }))
+    })))
     .pipe(gulp.dest(target.output));                    // output files
 });
 
@@ -168,14 +171,14 @@ gulp.task('images', function () {
  *********************************************************************************/
 
 gulp.task('browser-sync', function () {
-  var files = ['css/*.css', 'js/*.js'];                 // files to inject
-  var options = {                                       // browser sync options
-    server: {baseDir: target.output},
-    open: true,
-    notify: false,
-    scrollProportionally: true
-  };
-  browserSync.init(files, options);
+    var files = ['css/*.css', 'js/*.js'];                 // files to inject
+    var options = {                                       // browser sync options
+      server: {baseDir: target.output},
+      open: true,
+      notify: false,
+      scrollProportionally: true
+    };
+    browserSync.init(files, options);
 });
 
 
@@ -193,7 +196,10 @@ gulp.task('dist-clean', function () {
  *********************************************************************************/
 
 gulp.task('unit-tests', function () {
-  var runType = (env === 'prod');
+
+
+  var runType = (config.env !== 'dev');
+  console.log(runType);
   return karma.start({                                  // run karma unit tests
     configFile: __dirname + '/karma.conf.js',
     singleRun: runType
@@ -230,8 +236,21 @@ gulp.task('patch-version-bump', function () {
 /*********************************************************************************
  12. TASKS
  *********************************************************************************/
-
 gulp.task('default', function () {
+  runSequence(
+    'dist-clean',
+    ['scss', 'js-lint', 'js-concat'],
+    'unit-tests',
+    'html',
+    'images'
+  );
+});
+
+gulp.task('dev', function () {
+
+  // set environment
+  config.env = 'dev';
+
   runSequence(
     'dist-clean',
     ['scss', 'js-lint', 'js-concat'],
@@ -248,3 +267,4 @@ gulp.task('default', function () {
 gulp.task('test', function () {
   runSequence('unit-tests');
 });
+

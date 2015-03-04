@@ -28,4 +28,3 @@ The version bumping tasks should be used before you commit code that will be rel
 
 ## Coming Soon
 * Upgrade to gulp.js 4.0
-* Change `gulp-if` statements so they run on `dev` as opposed to `prod`
