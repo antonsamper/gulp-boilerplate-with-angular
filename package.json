@@ -11,7 +11,6 @@
     "gulp-autoprefixer": "2.0.0",
     "gulp-bump": "0.2.2",
     "gulp-concat": "2.4.2",
-    "gulp-config": "^0.3.0",
     "gulp-csso": "0.2.9",
     "gulp-debug": "1.0.1",
     "gulp-iconfont": "1.0.0",
@@ -32,6 +31,8 @@
     "karma-jasmine": "0.3.5",
     "karma-phantomjs-launcher": "0.1.4",
     "main-bower-files": "2.5.0",
-    "run-sequence": "1.0.2"
+    "require-dir": "^0.1.0",
+    "run-sequence": "1.0.2",
+    "watchify": "^2.4.0"
   }
 }
