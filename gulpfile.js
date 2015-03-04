@@ -14,7 +14,6 @@ var onError = function (err) {
  *********************************************************************************/
 
 var browserSync = require('browser-sync');              // inject code to all devices
-var del = require('del');                               // delete files and folders
 var gulp = require('gulp');                             // gulp core
 var autoprefixer = require('gulp-autoprefixer');        // sets browser prefixes
 var concat = require('gulp-concat');                    // file concatenation
@@ -200,13 +199,7 @@ gulp.task('browser-sync', function () {
 });
 
 
-/*********************************************************************************
- 8. CLEAN UP
- *********************************************************************************/
 
-gulp.task('dist-clean', function () {
-  del([target.output + '/**/*']);
-});
 
 
 /*********************************************************************************
@@ -230,7 +223,7 @@ gulp.task('unit-tests', function () {
  *********************************************************************************/
 gulp.task('default', function () {
   runSequence(
-    'dist-clean',
+    'purge',
     ['scss', 'js-lint', 'js-concat'],
     'unit-tests',
     'html',
@@ -244,7 +237,7 @@ gulp.task('dev', function () {
   config.env = 'dev';
 
   runSequence(
-    'dist-clean',
+    'purge',
     ['scss', 'js-lint', 'js-concat'],
     'unit-tests',
     'html',
