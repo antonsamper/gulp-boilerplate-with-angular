@@ -1,10 +1,12 @@
 # Starter boilerplate with gulp.js
-A clean and simple opinionated starter boilerplate using gulp.js.
+A clean and simple opinionated boilerplate using gulp.js.
 
 To start using the boilerplate, run `npm i` and `bower i` and the  run one of the tasks.
 
+
 ###### Tasks
-* `gulp` (default task)
+* `gulp` (default/release task)(asset revisions, minification and karma single run)
+* `gulp dev` (development task)(watch, karma ci and browser sync)
 * `gulp test` (karma only task)
 
 
