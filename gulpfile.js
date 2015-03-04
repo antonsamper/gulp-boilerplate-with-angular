@@ -45,6 +45,10 @@ var runSequence = require('run-sequence');              // tasks in sequence
 
 var env = process.env.NODE_ENV || 'dev';                // set env - 'prod' or 'dev'
 var target = {
+  app_json: [                                           // app related files
+    './bower.json',
+    './package.json'
+  ],
   src_index: 'src/index.html',                          // main source file
   output: 'dist',                                       // output directory
   scss_src: 'src/scss/*.scss',                          // main files with imports
@@ -198,7 +202,33 @@ gulp.task('unit-tests', function () {
 
 
 /*********************************************************************************
- 10. TASKS
+ 11. VERSIONING
+ *********************************************************************************/
+
+var versionBump = function (type) {
+  return gulp
+    .src(target.app_json)                               // files to bump
+    .pipe(bump({                                        // bump version on release
+      type: type
+    }))
+    .pipe(gulp.dest('./'));
+};
+
+gulp.task('major-version-bump', function () {
+  versionBump('major');
+});
+
+gulp.task('minor-version-bump', function () {
+  versionBump('minor');
+});
+
+gulp.task('patch-version-bump', function () {
+  versionBump('patch');
+});
+
+
+/*********************************************************************************
+ 12. TASKS
  *********************************************************************************/
 
 gulp.task('default', function () {
