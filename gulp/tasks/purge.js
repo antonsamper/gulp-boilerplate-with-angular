@@ -10,8 +10,8 @@
  *********************************************************************************/
 
 var config = require('../shared/config.js');
-var del    = require('del');
-var gulp   = require('gulp');
+var del = require('del');
+var gulp = require('gulp');
 
 
 /*********************************************************************************
