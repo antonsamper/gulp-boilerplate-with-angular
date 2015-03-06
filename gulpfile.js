@@ -247,6 +247,7 @@ gulp.task('dev', function () {
   gulp.watch(target.scss_all, ['scss']);
   gulp.watch(target.js_lint_src, ['js-lint']);
   gulp.watch(target.js_concat_src, ['js-concat']);
+  gulp.watch(target.src_index).on('change', browsersync.reload);
 });
 
 gulp.task('test', function () {
