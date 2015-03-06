@@ -19,7 +19,10 @@ var gulp = require('gulp');
  *********************************************************************************/
 
 gulp.task('browserSync', function () {
-  browserSync.init([config.path.outputJs, config.path.outputCss], {
+  browserSync.init([
+    config.path.outputJs,
+    config.path.outputCss
+  ], {
     server: {
       baseDir: config.path.outputDir
     },
