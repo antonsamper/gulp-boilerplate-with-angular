@@ -8,7 +8,7 @@ var targets = {
     './package.json'
   ],
   src_index: 'src/index.html',                          // main source file
-  output: 'dist',                                       // output directory
+  outputDir: 'dist',                                       // output directory
   scss_src: 'src/scss/*.scss',                          // main files with imports
   scss_all: 'src/scss/**/*.scss',                       // all scss files
   scss_output: 'dist/css',                              // compiled scss destination
@@ -27,8 +27,8 @@ var targets = {
   images_src: 'src/images/**/*.{jpg,png,gif,svg}',      // all images to compress
   images_output: 'dist/images',                         // compressed images folder
   output_js_dir: 'dist/js',                             // minified js destination
-  output_js_files: 'dist/js/**/*.js',                   // minified js files
-  output_css_files: 'dist/css/*.css'                    // minified css files
+  outputJs: 'dist/js/**/*.js',                   // minified js files
+  outputCss: 'dist/css/*.css'                    // minified css files
 };
 
 module.exports = {
