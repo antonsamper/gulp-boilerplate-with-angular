@@ -9,8 +9,8 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var config = require('../shared/config.js');
 var browserSync = require('browser-sync');
+var config = require('../shared/config.js');
 var gulp = require('gulp');
 
 
