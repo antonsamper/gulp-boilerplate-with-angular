@@ -183,20 +183,7 @@ gulp.task('images', function () {
 });
 
 
-/*********************************************************************************
- 7. BROWSER SYNC
- *********************************************************************************/
 
-gulp.task('browser-sync', function () {
-    var files = ['css/*.css', 'js/*.js'];                 // files to inject
-    var options = {                                       // browser sync options
-      server: {baseDir: target.output},
-      open: true,
-      notify: false,
-      scrollProportionally: true
-    };
-    browserSync.init(files, options);
-});
 
 
 
@@ -242,7 +229,7 @@ gulp.task('dev', function () {
     'unit-tests',
     'html',
     'images',
-    'browser-sync'
+    'browserSync'
   );
   gulp.watch(target.scss_all, ['scss']);
   gulp.watch(target.js_lint_src, ['js-lint']);
