@@ -1,6 +1,6 @@
 /*
  * @title BrowserSync
- * @description A task used to initialise a local server with auto reload
+ * @description A task used to initialise a local server
  * @example (cli) gulp browserSync
  */
 
