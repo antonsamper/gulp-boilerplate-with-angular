@@ -19,5 +19,5 @@ var gulp = require('gulp');
  *********************************************************************************/
 
 gulp.task('purge', function () {
-  del([config.path.output + '/**/*']);
+  del([config.path.outputDir + '/**/*']);
 });
