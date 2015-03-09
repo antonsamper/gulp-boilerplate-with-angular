@@ -112,9 +112,9 @@ gulp.task('js-concat', function () {
     .pipe(plumber({                                     // keep running on errors
       errorHandler: onError
     }))
-    .pipe(gulpif(config.env !== 'dev', uglify()))       // uglify the files
-    .pipe(gulpif(config.env !== 'dev', concat('app.min.js')))  // concat to one file
-    .pipe(gulpif(config.env !== 'dev', rev()))          // apply revision
+    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', uglify()))       // uglify the files
+    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', concat('app.min.js')))  // concat to one file
+    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))          // apply revision
     .pipe(gulp.dest(target.output_js_dir))              // output files
     .pipe(browserSync.reload({stream: true}));          // browser sync reload
 });
@@ -135,7 +135,7 @@ gulp.task('html', function () {
       ignorePath: 'dist',
       addRootSlash: false
     }))
-    .pipe(gulpif(config.env !== 'dev', minifyHtml({     // minify html options
+    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', minifyHtml({     // minify html options
       empty: true,
       spare: true,
       quotes: true
@@ -172,7 +172,7 @@ gulp.task('images', function () {
 gulp.task('unit-tests', function () {
 
 
-  var runType = (config.env !== 'dev');
+  var runType = (process.env.ENVIRONMENT_TYPE !== 'dev');
   console.log(runType);
   return karma.start({                                  // run karma unit tests
     configFile: __dirname + '/karma.conf.js',
@@ -197,7 +197,7 @@ gulp.task('default', function () {
 gulp.task('dev', function () {
 
   // set environment
-  config.env = 'dev';
+  process.env.ENVIRONMENT_TYPE = 'dev';
 
   runSequence(
     'purge',
