@@ -1,6 +1,6 @@
 /*
  * @title Bump
- * @description A task used to bump the bower and package version numbers
+ * @description A task to bump the bower and package version numbers
  * @summary Allowed bump types: major, minor, patch
  * @default patch
  * @example (cli) env bump=major gulp bump
