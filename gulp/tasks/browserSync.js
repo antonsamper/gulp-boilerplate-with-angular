@@ -1,6 +1,6 @@
 /*
  * @title BrowserSync
- * @description A task used to initialise a local server
+ * @description A task to initialise a local server
  * @example (cli) gulp browserSync
  */
 
@@ -10,8 +10,8 @@
  *********************************************************************************/
 
 var browserSync = require('browser-sync');
-var config = require('../shared/config.js');
 var gulp = require('gulp');
+var sharedPaths = require('../shared/paths.js');
 
 
 /*********************************************************************************
@@ -20,11 +20,11 @@ var gulp = require('gulp');
 
 gulp.task('browserSync', function () {
   browserSync.init([
-    config.path.outputJs,
-    config.path.outputCss
+    sharedPaths.outputJs,
+    sharedPaths.outputCss
   ], {
     server: {
-      baseDir: config.path.outputDir
+      baseDir: sharedPaths.outputDir
     },
     open: true,
     notify: false,
