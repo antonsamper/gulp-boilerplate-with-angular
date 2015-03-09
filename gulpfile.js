@@ -15,9 +15,7 @@ var onError = function (err) {
 
 var browserSync = require('browser-sync');              // inject code to all devices
 var gulp = require('gulp');                             // gulp core
-var autoprefixer = require('gulp-autoprefixer');        // sets browser prefixes
 var concat = require('gulp-concat');                    // file concatenation
-var csso = require('gulp-csso');                        // advanced css minification
 var debug = require('gulp-debug');                      // debug mode
 var gulpif = require('gulp-if');                        // conditionals inside config
 var iconfont = require('gulp-iconfont');                // icon font builder
@@ -28,8 +26,6 @@ var karma = require('karma').server;                    // karma
 var minifyHtml = require('gulp-minify-html');           // html minification
 var plumber = require('gulp-plumber');                  // disable interruptions
 var rev = require('gulp-rev');                          // file revisions
-var sass = require('gulp-sass');                        // sass compiler
-var sourcemaps = require('gulp-sourcemaps');            // sourcemaps
 var uglify = require('gulp-uglify');                    // js minification
 var gutil = require('gulp-util');                       // gulp utilities
 var stylish = require('jshint-stylish');                // style for jshint errors
@@ -71,9 +67,7 @@ var target = {
   ],
   src_index: 'src/index.html',                          // main source file
   output: 'dist',                                       // output directory
-  scss_src: 'src/scss/*.scss',                          // main files with imports
-  scss_all: 'src/scss/**/*.scss',                       // all scss files
-  scss_output: 'dist/css',                              // compiled scss destination
+  sassDir: 'src/sass/**/*.scss',                       // all sass files
   js_lint_src: [                                        // js to lint
     'src/js/**/*.js',
     'package.json',
@@ -94,25 +88,7 @@ var target = {
 };
 
 
-/*********************************************************************************
- 3. PROCESS SCSS
- *********************************************************************************/
 
-gulp.task('scss', function () {
-  return gulp
-    .src(target.scss_src)                               // gather the files
-    .pipe(plumber({                                     // keep running on errors
-      errorHandler: onError
-    }))
-    .pipe(sourcemaps.init())                            // initialise sourcemaps
-    .pipe(sass())                                       // compile all scss
-    .pipe(sourcemaps.write())                           // write out the sourcemaps
-    .pipe(autoprefixer('last 2 version'))               // add vendor prefixes
-    .pipe(gulpif(config.env !== 'dev', csso()))         // minify css
-    .pipe(gulpif(config.env !== 'dev', rev()))          // apply revision
-    .pipe(gulp.dest(target.scss_output))                // output files
-    .pipe(browserSync.reload({stream: true}));          // browser sync reload
-});
 
 
 /*************************************************************************************
@@ -211,7 +187,7 @@ gulp.task('unit-tests', function () {
 gulp.task('default', function () {
   runSequence(
     'purge',
-    ['scss', 'js-lint', 'js-concat'],
+    ['sass', 'js-lint', 'js-concat'],
     'unit-tests',
     'html',
     'images'
@@ -225,16 +201,16 @@ gulp.task('dev', function () {
 
   runSequence(
     'purge',
-    ['scss', 'js-lint', 'js-concat'],
+    ['sass', 'js-lint', 'js-concat'],
     'unit-tests',
     'html',
     'images',
     'browserSync'
   );
-  gulp.watch(target.scss_all, ['scss']);
+  gulp.watch(target.sassDir, ['sass']);
   gulp.watch(target.js_lint_src, ['js-lint']);
   gulp.watch(target.js_concat_src, ['js-concat']);
-  gulp.watch(target.src_index).on('change', browsersync.reload);
+  gulp.watch(target.src_index).on('change', browserSync.reload);
 });
 
 gulp.task('test', function () {
