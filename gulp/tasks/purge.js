@@ -1,6 +1,6 @@
 /*
  * @title Purge
- * @description A task delete everything in the output directory
+ * @description A task to delete the output directory
  * @example (cli) gulp purge
  */
 
@@ -9,9 +9,9 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-var config = require('../shared/config.js');
 var del = require('del');
 var gulp = require('gulp');
+var sharedPaths = require('../shared/paths.js');
 
 
 /*********************************************************************************
@@ -19,5 +19,5 @@ var gulp = require('gulp');
  *********************************************************************************/
 
 gulp.task('purge', function () {
-  del([config.path.outputDir + '/**/*']);
+  del([sharedPaths.outputDir]);
 });
