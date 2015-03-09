@@ -3,7 +3,7 @@
  * @description A task used to bump the bower and package version numbers
  * @summary Allowed bump types: major, minor, patch
  * @default patch
- * @example (cli) env type=major gulp bump
+ * @example (cli) env bump=major gulp bump
  */
 
 
@@ -23,7 +23,7 @@ gulp.task('bump', function () {
   return gulp
     .src(['./bower.json', './package.json'])
     .pipe(bump({
-      type: process.env.type
+      type: process.env.bump
     }))
     .pipe(gulp.dest('./'));
 });
