@@ -22,7 +22,6 @@ var iconfont = require('gulp-iconfont');                // icon font builder
 var imagemin = require('gulp-imagemin');                // image minification
 var inject = require("gulp-inject");                    // asset injection
 var jshint = require('gulp-jshint');                    // js validation
-var karma = require('karma').server;                    // karma
 var minifyHtml = require('gulp-minify-html');           // html minification
 var plumber = require('gulp-plumber');                  // disable interruptions
 var rev = require('gulp-rev');                          // file revisions
@@ -165,20 +164,7 @@ gulp.task('images', function () {
 
 
 
-/*********************************************************************************
- 9. TESTS
- *********************************************************************************/
 
-gulp.task('unit-tests', function () {
-
-
-  var runType = (process.env.ENVIRONMENT_TYPE !== 'dev');
-  console.log(runType);
-  return karma.start({                                  // run karma unit tests
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: runType
-  });
-});
 
 
 /*********************************************************************************
@@ -188,7 +174,7 @@ gulp.task('default', function () {
   runSequence(
     'purge',
     ['sass', 'js-lint', 'js-concat'],
-    'unit-tests',
+    'karma',
     'html',
     'images'
   );
@@ -202,7 +188,7 @@ gulp.task('dev', function () {
   runSequence(
     'purge',
     ['sass', 'js-lint', 'js-concat'],
-    'unit-tests',
+    'karma',
     'html',
     'images',
     'browserSync'
@@ -214,6 +200,6 @@ gulp.task('dev', function () {
 });
 
 gulp.task('test', function () {
-  runSequence('unit-tests');
+  runSequence('karma');
 });
 
