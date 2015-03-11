@@ -12,7 +12,7 @@ Task | Description
 `gulp` | **Default/release task:** asset revisions, minification and karma single run
 `gulp dev` | **Development task:** watch, karma ci and browser sync
 
----
+
 
 ## Todo
 * Implement icon font
