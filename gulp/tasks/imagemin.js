@@ -1,5 +1,5 @@
 /*
- * @title ImageMin
+ * @title Imagemin
  * @description A task to minify images and svg files
  * @example (cli) gulp imagemin
  */
