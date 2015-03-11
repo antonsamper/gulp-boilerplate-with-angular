@@ -13,3 +13,6 @@ Task | Description
 ------------ | -------------
 `gulp` | **Default/release task:** asset revisions, minification and karma single run
 `gulp dev` | **Development task:** watch, karma ci and browser sync
+
+[license-badge]: http://img.shields.io/badge/license-mit-lightgrey.svg?style=flat
+[license-link]: https://github.com/goodeggs/angular-cached-resource/blob/master/LICENSE.md
