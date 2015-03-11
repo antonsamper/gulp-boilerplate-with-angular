@@ -116,30 +116,3 @@ gulp.task('js-concat', function () {
 });
 
 
-
-
-
-/*********************************************************************************
- 12. TASKS
- *********************************************************************************/
-
-
-gulp.task('dev', function () {
-
-  // set environment
-  process.env.ENVIRONMENT_TYPE = 'dev';
-
-  runSequence(
-    'purge',
-    ['sass', 'js-lint', 'js-concat'],
-    'karma',
-    'minifyHtml',
-    'imagemin',
-    'browserSync'
-  );
-  gulp.watch(target.srcDir + '/sass/**/*.scss', ['sass']);
-  gulp.watch(target.js_lint_src, ['js-lint']);
-  gulp.watch(target.js_concat_src, ['js-concat']);
-  gulp.watch(target.src_index).on('change', browserSync.reload);
-});
-
