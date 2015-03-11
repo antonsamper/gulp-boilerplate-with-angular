@@ -25,7 +25,7 @@ gulp.task('dev', function () {
 
   runSequence(
     'purge',
-    ['sass', 'jshint', 'js-concat'],
+    ['sass', 'jshint', 'concat'],
     'karma',
     'minifyHtml',
     'imagemin',
@@ -36,6 +36,6 @@ gulp.task('dev', function () {
 
   gulp.watch(sharedPaths.srcDir + '/sass/**/*.scss', ['sass']);
   gulp.watch(sharedPaths.jshintSrc, ['jshint']);
-  gulp.watch(sharedPaths.js_concat_src, ['js-concat']);
+  gulp.watch(sharedPaths.concatSrc, ['concat']);
 
 });
