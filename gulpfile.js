@@ -199,7 +199,3 @@ gulp.task('dev', function () {
   gulp.watch(target.src_index).on('change', browserSync.reload);
 });
 
-gulp.task('test', function () {
-  runSequence('karma');
-});
-
