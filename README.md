@@ -1,4 +1,4 @@
-# Starter boilerplate with gulp.js v0.1.1
+# Starter boilerplate with gulp.js v0.1.2
 A clean and simple starter boilerplate using gulp.js.
 
 To start using the boilerplate, run `npm i` and `bower i` and then run one of the tasks.
