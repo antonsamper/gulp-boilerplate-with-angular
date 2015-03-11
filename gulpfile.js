@@ -1,12 +1,4 @@
-/*********************************************************************************
- 0. GLOBALS
- *********************************************************************************/
 
-var onError = function (err) {
-  gutil.log(gutil.colors.red(err.plugin) + ': ' + gutil.colors.yellow(err.message));
-  gutil.beep();
-  this.emit('end');
-};
 
 
 /*********************************************************************************
@@ -20,12 +12,10 @@ var debug = require('gulp-debug');                      // debug mode
 var gulpif = require('gulp-if');                        // conditionals inside config
 var iconfont = require('gulp-iconfont');                // icon font builder
 var inject = require("gulp-inject");                    // asset injection
-var jshint = require('gulp-jshint');                    // js validation
 var plumber = require('gulp-plumber');                  // disable interruptions
 var rev = require('gulp-rev');                          // file revisions
 var uglify = require('gulp-uglify');                    // js minification
 var gutil = require('gulp-util');                       // gulp utilities
-var stylish = require('jshint-stylish');                // style for jshint errors
 var bowerFiles = require('main-bower-files');           // bower modules includes
 var runSequence = require('run-sequence');              // tasks in sequence
 
@@ -65,7 +55,7 @@ var target = {
   src_index: 'src/index.html',                          // main source file
   output: 'dist',                                       // output directory
   sassDir: 'src/sass/**/*.scss',                       // all sass files
-  js_lint_src: [                                        // js to lint
+  jshintSrc: [                                        // js to lint
     'src/js/**/*.js',
     'package.json',
     'bower.json',
@@ -91,22 +81,15 @@ var target = {
  4. JS LINT AND CONCAT
  *************************************************************************************/
 
-gulp.task('js-lint', function () {
-  return gulp
-    .src(target.js_lint_src)                            // gather the files
-    .pipe(plumber({                                     // keep running on errors
-      errorHandler: onError
-    }))
-    .pipe(jshint())                                     // lint the files
-    .pipe(jshint.reporter(stylish));                    // present the results
-});
+var sharedEvents = require(__dirname + '/gulp/shared/events.js');
+
 
 gulp.task('js-concat', function () {
   var files = bowerFiles().concat(target.js_concat_src);
   return gulp
     .src(files)                                         // gather the files
     .pipe(plumber({                                     // keep running on errors
-      errorHandler: onError
+      errorHandler: sharedEvents.onError
     }))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', uglify()))       // uglify the files
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', concat('app.min.js')))  // concat to one file
@@ -114,5 +97,3 @@ gulp.task('js-concat', function () {
     .pipe(gulp.dest(target.output_js_dir))              // output files
     .pipe(browserSync.reload({stream: true}));          // browser sync reload
 });
-
-

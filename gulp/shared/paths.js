@@ -9,13 +9,7 @@
  *********************************************************************************/
 
 module.exports = {
-  js_lint_src: [                                        // js to lint
-    'src/js/**/*.js',
-    'package.json',
-    'bower.json',
-    'gulpfile.js',
-    '.jshintrc'
-  ],
+
   js_concat_src: [                                      // js files to concatenate
     'src/js/app.js',
     'src/js/**/*.js',
@@ -24,10 +18,16 @@ module.exports = {
   output_js_dir: 'dist/js',                             // minified js destination
 
 
-
   srcDir: 'src',
   srcIndex: 'src/index.html',
   outputDir: 'dist',
   outputJs: 'dist/js/**/*.js',
-  outputCss: 'dist/css/*.css'
+  outputCss: 'dist/css/*.css',
+  jshintSrc: [
+    'src/js/**/*.js',
+    'package.json',
+    'bower.json',
+    'gulpfile.js',
+    '.jshintrc'
+  ]
 };

@@ -25,7 +25,7 @@ gulp.task('dev', function () {
 
   runSequence(
     'purge',
-    ['sass', 'js-lint', 'js-concat'],
+    ['sass', 'jshint', 'js-concat'],
     'karma',
     'minifyHtml',
     'imagemin',
@@ -35,7 +35,7 @@ gulp.task('dev', function () {
   gulp.watch(sharedPaths.srcIndex).on('change', browserSync.reload);
 
   gulp.watch(sharedPaths.srcDir + '/sass/**/*.scss', ['sass']);
-  gulp.watch(sharedPaths.js_lint_src, ['js-lint']);
+  gulp.watch(sharedPaths.jshintSrc, ['jshint']);
   gulp.watch(sharedPaths.js_concat_src, ['js-concat']);
 
 });
