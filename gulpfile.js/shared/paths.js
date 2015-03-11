@@ -11,6 +11,7 @@
 module.exports = {
   srcDir: 'src',
   srcIndex: 'src/index.html',
+  srcImages: 'src/images/**/*.{jpg,png,gif,svg}',
   outputDir: 'dist',
   outputJs: 'dist/js/**/*.js',
   outputCss: 'dist/css/*.css',

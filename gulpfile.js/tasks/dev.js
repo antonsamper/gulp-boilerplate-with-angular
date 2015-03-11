@@ -37,5 +37,6 @@ gulp.task('dev', function () {
   gulp.watch(sharedPaths.srcDir + '/sass/**/*.scss', ['sass']);
   gulp.watch(sharedPaths.jshintSrc, ['jshint']);
   gulp.watch(sharedPaths.concatSrc, ['concat']);
+  gulp.watch(sharedPaths.srcImages, ['imagemin']);
 
 });

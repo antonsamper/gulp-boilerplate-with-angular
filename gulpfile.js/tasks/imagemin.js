@@ -22,7 +22,7 @@ var sharedEvents = require('../shared/events.js');
 
 gulp.task('imagemin', function () {
   return gulp
-    .src(sharedPaths.srcDir + '/images/**/*.{jpg,png,gif,svg}')
+    .src(sharedPaths.srcImages)
     .pipe(plumber({
       errorHandler: sharedEvents.onError
     }))
