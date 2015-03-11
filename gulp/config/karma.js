@@ -1,4 +1,13 @@
-// karma.conf.js
+/*
+ * @title Karma
+ * @description Karma configuration file
+ */
+
+
+/*********************************************************************************
+ 1. EXPORTS
+ *********************************************************************************/
+
 module.exports = function (config) {
   config.set({
     basePath: __dirname + '/../../',
