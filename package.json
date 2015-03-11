@@ -33,7 +33,6 @@
     "karma-phantomjs-launcher": "0.1.4",
     "main-bower-files": "2.5.0",
     "require-dir": "0.1.0",
-    "run-sequence": "1.0.2",
-    "watchify": "2.4.0"
+    "run-sequence": "1.0.2"
   }
 }
