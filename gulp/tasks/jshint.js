@@ -1,7 +1,7 @@
 /*
  * @title Jshint
- * @description A task detect detect js errors
- * @example (cli) gulp purge
+ * @description A task detect js errors
+ * @example (cli) gulp jshint
  */
 
 
