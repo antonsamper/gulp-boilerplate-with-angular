@@ -122,15 +122,7 @@ gulp.task('js-concat', function () {
 /*********************************************************************************
  12. TASKS
  *********************************************************************************/
-gulp.task('default', function () {
-  runSequence(
-    'purge',
-    ['sass', 'js-lint', 'js-concat'],
-    'karma',
-    'minifyHtml',
-    'imagemin'
-  );
-});
+
 
 gulp.task('dev', function () {
 
