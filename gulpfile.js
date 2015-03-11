@@ -19,7 +19,6 @@ var concat = require('gulp-concat');                    // file concatenation
 var debug = require('gulp-debug');                      // debug mode
 var gulpif = require('gulp-if');                        // conditionals inside config
 var iconfont = require('gulp-iconfont');                // icon font builder
-var imagemin = require('gulp-imagemin');                // image minification
 var inject = require("gulp-inject");                    // asset injection
 var jshint = require('gulp-jshint');                    // js validation
 var minifyHtml = require('gulp-minify-html');           // html minification
@@ -79,8 +78,7 @@ var target = {
     'src/js/**/*.js',
     '!src/js/**/*.spec.js'
   ],
-  images_src: 'src/images/**/*.{jpg,png,gif,svg}',      // all images to compress
-  images_output: 'dist/images',                         // compressed images folder
+  srcDir: 'src',
   output_js_dir: 'dist/js',                             // minified js destination
   output_js_files: 'dist/js/**/*.js',                   // minified js files
   output_css_files: 'dist/css/*.css'                    // minified css files
@@ -144,30 +142,6 @@ gulp.task('html', function () {
 
 
 /*********************************************************************************
- 6. IMAGE COMPRESSION
- *********************************************************************************/
-
-gulp.task('images', function () {
-  return gulp
-    .src(target.images_src)                             // gather the files
-    .pipe(plumber({                                     // keep running on errors
-      errorHandler: onError
-    }))
-    .pipe(imagemin())                                   // compress images
-    .pipe(gulp.dest(target.images_output));             // output files
-});
-
-
-
-
-
-
-
-
-
-
-
-/*********************************************************************************
  12. TASKS
  *********************************************************************************/
 gulp.task('default', function () {
@@ -176,7 +150,7 @@ gulp.task('default', function () {
     ['sass', 'js-lint', 'js-concat'],
     'karma',
     'html',
-    'images'
+    'imagemin'
   );
 });
 
@@ -190,10 +164,10 @@ gulp.task('dev', function () {
     ['sass', 'js-lint', 'js-concat'],
     'karma',
     'html',
-    'images',
+    'imagemin',
     'browserSync'
   );
-  gulp.watch(target.sassDir, ['sass']);
+  gulp.watch(target.srcDir + '/sass/**/*.scss', ['sass']);
   gulp.watch(target.js_lint_src, ['js-lint']);
   gulp.watch(target.js_concat_src, ['js-concat']);
   gulp.watch(target.src_index).on('change', browserSync.reload);
