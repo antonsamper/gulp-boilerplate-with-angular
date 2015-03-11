@@ -21,7 +21,6 @@ var gulpif = require('gulp-if');                        // conditionals inside c
 var iconfont = require('gulp-iconfont');                // icon font builder
 var inject = require("gulp-inject");                    // asset injection
 var jshint = require('gulp-jshint');                    // js validation
-var minifyHtml = require('gulp-minify-html');           // html minification
 var plumber = require('gulp-plumber');                  // disable interruptions
 var rev = require('gulp-rev');                          // file revisions
 var uglify = require('gulp-uglify');                    // js minification
@@ -117,28 +116,7 @@ gulp.task('js-concat', function () {
 });
 
 
-/*********************************************************************************
- 5. HTML COMPRESSION
- *********************************************************************************/
 
-gulp.task('html', function () {
-  var files = [target.output_css_files, target.output_js_files];
-  return gulp
-    .src(target.src_index)                              // gather the files
-    .pipe(plumber({                                     // keep running on errors
-      errorHandler: onError
-    }))
-    .pipe(inject(gulp.src(files, {read: false}), {      // injected files options
-      ignorePath: 'dist',
-      addRootSlash: false
-    }))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', minifyHtml({     // minify html options
-      empty: true,
-      spare: true,
-      quotes: true
-    })))
-    .pipe(gulp.dest(target.output));                    // output files
-});
 
 
 /*********************************************************************************
@@ -149,7 +127,7 @@ gulp.task('default', function () {
     'purge',
     ['sass', 'js-lint', 'js-concat'],
     'karma',
-    'html',
+    'minifyHtml',
     'imagemin'
   );
 });
@@ -163,7 +141,7 @@ gulp.task('dev', function () {
     'purge',
     ['sass', 'js-lint', 'js-concat'],
     'karma',
-    'html',
+    'minifyHtml',
     'imagemin',
     'browserSync'
   );
