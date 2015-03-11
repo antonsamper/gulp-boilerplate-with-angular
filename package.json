@@ -1,7 +1,7 @@
 {
   "name": "gulp-boilerplate",
   "author": "Anton Samper Rivaya",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/antonsamper/gulp-boilerplate",
   "description": "gulp.js Boilerplate",
   "devDependencies": {
