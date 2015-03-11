@@ -9,7 +9,6 @@
  *********************************************************************************/
 
 module.exports = {
-  src_index: 'src/index.html',                          // main source file
   js_lint_src: [                                        // js to lint
     'src/js/**/*.js',
     'package.json',
@@ -27,6 +26,7 @@ module.exports = {
 
 
   srcDir: 'src',
+  srcIndex: 'src/index.html',
   outputDir: 'dist',
   outputJs: 'dist/js/**/*.js',
   outputCss: 'dist/css/*.css'
