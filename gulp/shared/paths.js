@@ -9,15 +9,6 @@
  *********************************************************************************/
 
 module.exports = {
-
-  js_concat_src: [                                      // js files to concatenate
-    'src/js/app.js',
-    'src/js/**/*.js',
-    '!src/js/**/*.spec.js'
-  ],
-  output_js_dir: 'dist/js',                             // minified js destination
-
-
   srcDir: 'src',
   srcIndex: 'src/index.html',
   outputDir: 'dist',
@@ -29,5 +20,10 @@ module.exports = {
     'bower.json',
     'gulpfile.js',
     '.jshintrc'
+  ],
+  concatSrc: [
+    'src/js/app.js',
+    'src/js/**/*.js',
+    '!src/js/**/*.spec.js'
   ]
 };
