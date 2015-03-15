@@ -25,7 +25,7 @@ gulp.task('dev', function () {
 
   runSequence(
     'purge',
-    ['sass', 'jshint', 'concat'],
+    ['iconfont', 'sass', 'jshint', 'concat'],
     'karma',
     'minifyHtml',
     'imagemin',
@@ -38,5 +38,6 @@ gulp.task('dev', function () {
   gulp.watch(sharedPaths.jshintSrc, ['jshint']);
   gulp.watch(sharedPaths.concatSrc, ['concat']);
   gulp.watch(sharedPaths.srcImages, ['imagemin']);
+  gulp.watch(sharedPaths.srcIconFont, ['iconfont']);
 
 });
