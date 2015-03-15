@@ -32,8 +32,7 @@ gulp.task('dev', function () {
     'browserSync'
   );
 
-  gulp.watch(sharedPaths.srcIndex).on('change', browserSync.reload);
-
+  gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
   gulp.watch(sharedPaths.srcDir + '/sass/**/*.scss', ['sass']);
   gulp.watch(sharedPaths.jshintSrc, ['jshint']);
   gulp.watch(sharedPaths.concatSrc, ['concat']);

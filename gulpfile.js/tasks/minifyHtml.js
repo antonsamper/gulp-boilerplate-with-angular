@@ -9,6 +9,7 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+var browserSync = require('browser-sync');
 var gulp = require('gulp');
 var gulpif = require('gulp-if');
 var inject = require("gulp-inject");
@@ -42,5 +43,6 @@ gulp.task('minifyHtml', function () {
       spare: true,
       quotes: true
     })))
-    .pipe(gulp.dest(sharedPaths.outputDir));
+    .pipe(gulp.dest(sharedPaths.outputDir))
+    .pipe(browserSync.reload({stream: true}));
 });
