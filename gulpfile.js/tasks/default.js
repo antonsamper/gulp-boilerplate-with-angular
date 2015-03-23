@@ -20,9 +20,10 @@ var runSequence = require('run-sequence');
 gulp.task('default', function () {
   runSequence(
     'purge',
-    ['iconfont', 'sass', 'jshint', 'concat'],
-    'karma',
-    'minifyHtml',
-    'imagemin'
+    'iconfont',
+    'sass',
+    'jshint',
+    'concat',
+    ['karma', 'minifyHtml', 'imagemin']
   );
 });

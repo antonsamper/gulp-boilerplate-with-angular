@@ -25,10 +25,11 @@ gulp.task('dev', function () {
 
   runSequence(
     'purge',
-    ['iconfont', 'sass', 'jshint', 'concat'],
-    'karma',
-    'minifyHtml',
-    'imagemin',
+    'iconfont',
+    'sass',
+    'jshint',
+    'concat',
+    ['karma', 'minifyHtml', 'imagemin'],
     'browserSync'
   );
 
