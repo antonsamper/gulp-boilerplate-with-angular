@@ -10,9 +10,9 @@ To start using the boilerplate, run `npm i` and `bower i` and then run one of th
 ###### Bundle Tasks
 
 Task Name    | Description
------------- | --------------------------------------------------------------------------------------------
-`default`    | Output production ready code with asset revisions, minification and single run unit testing.
-`dev`        | Generate a development environment with code watch, karma ci and browser sync.
+------------ | ---------------------------------------------------------------------
+`default`    | Output minified production code, asset revisions and run unit tests.
+`dev`        | Generate a development environment with watch, karma and browsersync.
 
 ###### Individual Tasks
 
