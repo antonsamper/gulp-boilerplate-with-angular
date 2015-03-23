@@ -17,6 +17,7 @@ var minifyHtml = require('gulp-minify-html');
 var plumber = require('gulp-plumber');
 var sharedPaths = require('../shared/paths.js');
 var sharedEvents = require('../shared/events.js');
+var size = require('gulp-size');
 
 
 /*********************************************************************************
@@ -26,6 +27,7 @@ var sharedEvents = require('../shared/events.js');
 gulp.task('minifyHtml', function () {
   return gulp
     .src(sharedPaths.srcIndex)
+    .pipe(size({showFiles: true}))
     .pipe(plumber({
       errorHandler: sharedEvents.onError
     }))
@@ -44,5 +46,6 @@ gulp.task('minifyHtml', function () {
       quotes: true
     })))
     .pipe(gulp.dest(sharedPaths.outputDir))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(browserSync.reload({stream: true}))
+    .pipe(size({showFiles: true}));
 });

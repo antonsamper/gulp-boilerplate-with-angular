@@ -20,6 +20,7 @@ var sass = require('gulp-sass');
 var sassBulkImport = require('gulp-sass-bulk-import');
 var sharedPaths = require('../shared/paths.js');
 var sharedEvents = require('../shared/events.js');
+var size = require('gulp-size');
 var sourcemaps = require('gulp-sourcemaps');
 
 
@@ -30,6 +31,7 @@ var sourcemaps = require('gulp-sourcemaps');
 gulp.task('sass', function () {
   return gulp
     .src(sharedPaths.srcDir + '/sass/*.scss')
+    .pipe(size({showFiles: true}))
     .pipe(plumber({
       errorHandler: sharedEvents.onError
     }))
@@ -41,5 +43,6 @@ gulp.task('sass', function () {
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', csso()))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))
     .pipe(gulp.dest(sharedPaths.outputDir + '/css'))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(browserSync.reload({stream: true}))
+    .pipe(size({showFiles: true}));
 });
