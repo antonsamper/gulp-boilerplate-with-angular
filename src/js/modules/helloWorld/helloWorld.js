@@ -3,7 +3,8 @@
   app.helloWorld = function () {
     var hello = 'Hello ';
     var world = 'World!!';
-    return hello + world;
+    var image = 'xbox.jpg';
+    return hello + world + ' and this image:' + image;
   };
 
 })(APP);

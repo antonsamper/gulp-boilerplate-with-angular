@@ -1,7 +1,7 @@
 /*
- * @title Imagemin
- * @description A task to minify images and svg files
- * @example (cli) gulp imagemin
+ * @title RevReplace
+ * @description A task to rewrite occurrences of file names changed by gulp-rev
+ * @example (cli) gulp revReplace
  */
 
 
@@ -9,11 +9,11 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
+var del = require('del');
 var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
-var rev = require('gulp-rev');
+var revReplace = require('gulp-rev-replace');
+var runSequence = require('run-sequence');
 var sharedPaths = require('../shared/paths.js');
 var sharedEvents = require('../shared/events.js');
 
@@ -22,17 +22,25 @@ var sharedEvents = require('../shared/events.js');
  2. TASK
  *********************************************************************************/
 
-gulp.task('imagemin', function () {
+var manifest = sharedPaths.outputDir + '/rev-manifest.json';
+
+gulp.task('revReplaceManifest', function () {
   return gulp
-    .src(sharedPaths.srcImages)
+    .src(sharedPaths.outputDir + '/**/*.{html,css,js}')
     .pipe(plumber({
       errorHandler: sharedEvents.onError
     }))
-    .pipe(imagemin())
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))
-    .pipe(gulp.dest(sharedPaths.outputDir + '/images'))
-    .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev.manifest({
-      path: 'rev-manifest.json'
-    })))
+    .pipe(revReplace({manifest: gulp.src(manifest)}))
     .pipe(gulp.dest(sharedPaths.outputDir));
+});
+
+gulp.task('revPurgeManifest', function () {
+  del(manifest);
+});
+
+gulp.task('revReplace', function () {
+  runSequence(
+    'revReplaceManifest',
+    'revPurgeManifest'
+  );
 });
