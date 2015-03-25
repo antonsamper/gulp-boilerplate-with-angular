@@ -4,7 +4,7 @@ A clean and simple starter boilerplate for single page applications using gulp.j
 To start using the boilerplate, run `npm i` and `bower i` and then run one of the tasks.
 
 [![MIT License][license-badge]][license-link]
-[![Build Status][travis-badge][travis-link]
+[![Build Status][travis-badge]][travis-link]
 
 ---
 
@@ -30,6 +30,6 @@ Task Name     | Description
 `sass`        | Compile Sass to CSS.
 
 [license-badge]: http://img.shields.io/badge/license-mit-lightgrey.svg?style=flat
-[license-link]:  https://github.com/goodeggs/angular-cached-resource/blob/master/LICENSE.md
-[travis-badge]:  https://travis-ci.org/antonsamper/gulp-boilerplate.svg?branch=master
-[travis-link]:   https://travis-ci.org/antonsamper/gulp-boilerplate
+[license-link]: https://github.com/goodeggs/angular-cached-resource/blob/master/LICENSE.md
+[travis-badge]: https://travis-ci.org/antonsamper/gulp-boilerplate.svg?branch=master
+[travis-link]: https://travis-ci.org/antonsamper/gulp-boilerplate
