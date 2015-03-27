@@ -11,7 +11,7 @@
 module.exports = {
   srcDir: 'src',
   srcIndex: 'src/index.html',
-  srcImages: 'src/images/**/*.{jpg,png,gif,svg}',
+  srcImages: ['src/**/*.{jpg,png,gif,svg}', '!src/fonts/**/*.svg'],
   srcIconFont: 'src/fonts/iconfont/*.svg',
   outputDir: 'dist',
   outputJs: 'dist/js/**/*.js',
