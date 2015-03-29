@@ -30,7 +30,7 @@ gulp.task('imagemin', function () {
     }))
     .pipe(imagemin())
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))
-    .pipe(gulp.dest(sharedPaths.outputDir + '/images'))
+    .pipe(gulp.dest(sharedPaths.outputDir))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev.manifest()))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', gulp.dest(sharedPaths.outputDir)));
 });
