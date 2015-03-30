@@ -3,15 +3,20 @@
     <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
   </a>
 </p>
-# gulp.js starter boilerplate single page apps
+# gulp.js starter single page apps
 A clean and simple starter boilerplate for single page applications using gulp.js.
-
-To start using the boilerplate, run `npm i` and `bower i` and then run one of the tasks.
 
 [![MIT License][license-badge]][license-link]
 [![Build Status][travis-badge]][travis-link]
 
----
+###### Installation and Usage
+To start using the boilerplate, first install all the dependencies and then run one of the gulp tasks:
+
+ ```
+ $ npm i
+ $ bower i
+ $ gulp dev
+ ```
 
 ###### Bundle Tasks
 
