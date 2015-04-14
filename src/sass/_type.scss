@@ -1,0 +1,37 @@
+/*
+ * Typography
+ */
+
+html {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 62.5%;
+}
+
+/*
+ * Headings
+ */
+
+.heading {
+
+  &--large {
+    font-size: 4rem;
+    font-weight: 100;
+  }
+
+  &--medium {
+    font-size: 2rem;
+    font-weight: 100;
+  }
+
+}
+
+/*
+ * Alignment helpers
+ */
+.align {
+
+  &--center {
+    text-align: center;
+  }
+
+}

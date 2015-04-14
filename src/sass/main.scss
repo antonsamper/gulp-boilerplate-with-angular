@@ -1,12 +1,12 @@
-@import "variables";
-@import "external/*";
+// Image Path
+$image-path:    '/images';
 
-body {
-  color: $color-text2;
-  text-transform: uppercase;
-  transition: all .2s ease;
-  font-weight:bold;
-  font-family: "Tahoma", Georgia, "Times New Roman", sans-serif;
-  background: url('#{$image-path}/animals/cat.jpg') no-repeat top center;
-  background-size: 50%;
-}
+
+@import "variables/*";
+@import "external/*";
+@import "modules/*";
+
+@import "scaffolding";
+@import "type";
+
+

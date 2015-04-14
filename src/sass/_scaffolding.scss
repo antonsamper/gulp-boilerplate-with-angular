@@ -1,0 +1,74 @@
+/*
+ * Scaffolding
+ */
+
+* {
+
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+
+}
+
+/*
+ * Base
+ */
+
+html {
+  height: 100%;
+  min-height: 100%;
+  background-color: $color-white;
+  background: linear-gradient(to bottom, $color-shroom-haze-1, $color-shroom-haze-2);
+  background-attachment: fixed;
+}
+
+body {
+  color: $color-white;
+  padding: 4rem;
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+}
+
+/*
+ * Margins
+ */
+.margin {
+
+  &--medium {
+    margin: 2rem auto;
+  }
+
+  &--large {
+    margin: 6rem auto;
+  }
+
+}
+
+/*
+ * Paddings
+ */
+.padding {
+
+  &--medium {
+    padding: 2rem;
+  }
+
+}
+
+/*
+ * Positining
+ */
+.position {
+
+  &--bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+}
