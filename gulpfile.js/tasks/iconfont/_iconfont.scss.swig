@@ -16,9 +16,12 @@
   font-family: '{{ fontName }}';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
+  line-height: 1;
+  position: relative;
   text-decoration: none;
   text-transform: none;
   {% for icon in icons %}
