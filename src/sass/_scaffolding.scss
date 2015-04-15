@@ -28,7 +28,7 @@ html {
 
 body {
   color: $color-white;
-  padding: 4rem;
+  padding: 4rem 4rem 2rem;
   position: relative;
   min-height: 100%;
   margin: 0;
@@ -68,11 +68,13 @@ body {
  */
 .position {
 
-  &--bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  @media screen and (orientation: landscape) {
+    &--bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
 
 }
