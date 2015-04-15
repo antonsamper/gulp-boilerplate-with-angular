@@ -30,6 +30,7 @@ gulp.task('dev', function () {
     'jshint',
     'concat',
     ['karma', 'minifyHtml', 'imagemin'],
+    'move',
     'browserSync'
   );
 

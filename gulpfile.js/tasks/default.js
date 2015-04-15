@@ -25,6 +25,7 @@ gulp.task('default', function () {
     'jshint',
     'concat',
     ['karma', 'minifyHtml', 'imagemin'],
-    'revReplace'
+    'revReplace',
+    'move'
   );
 });
