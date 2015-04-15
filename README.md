@@ -36,9 +36,11 @@ Task Name     | Description
 `bump`        | Bump the bower and package version numbers
 `concat`      | Concatenate and compress js files
 `imagemin`    | Minify images and svg files
-`jshint`      | Detect js errors
+`jshint`      | Detect js syntax errors
+`jscs`        | Detect js style errors
 `karma`       | Run jasmine tests
 `minifyHtml`  | Inject assets into and compress the main index.html
+`move`        | Move source files to dist
 `purge`       | Delete the output directory
 `revReplace`  | Rewrite occurrences of file names changed by gulp-rev
 `sass`        | Compile Sass to CSS
