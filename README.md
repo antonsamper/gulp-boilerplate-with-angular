@@ -68,7 +68,6 @@ src/
 			|- helloWorld.spec.js
 	|- app.js
 |- sass/
-	|- external/
 	|- modules/
 	|- _variables.scss
 	|- main.scss
@@ -78,13 +77,15 @@ src/
 ### Fonts
 The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder will be copied to the `dist/fonts/` folder automatically.
 
-In order to generate a custom icon font, place your svg files inside the `src/fonts/iconfont/` folder and when the `iconfont` task runs, all the svgs inside this folder will be combined to create a custom icon font. Running this task will also generate a sass template file exported to `src/sass/external/` with the `@font-face` declaration and the font classes, for example:
+In order to generate a custom icon font, place your svg files inside the `src/fonts/iconfont/` folder and when the `iconfont` task runs, all the svgs inside this folder will be combined to create a custom icon font. Running this task will also generate a sass template file exported to `src/sass/modules/_iconfont.scss` with the `@font-face` declaration and the font classes, for example:
 
 ```
 &--iconfont01:before { content: '\e001'; }
 &--iconfont02:before { content: '\e002'; }
 &--iconfont03:before { content: '\e003'; }
 ```
+This auto generated file is explictily included in the Sass manifest.
+
 ### Images
 All images should be placed inside the `src/images/` folder. This is for consistency as opposed to a limitation enforced by the `imagemin` task as this task will look for and minify all images inside the `src/` folder that have any of the following extensions: `.jpg` `.png` `.gif` `.svg`
 
@@ -106,9 +107,7 @@ All the scripts should be placed inside the `src/js/` folder. These files will a
 This boilerplate supports bower components. The components are installed in the `bower_components/` folder and are automatically injected into `index.html` either at the top if it's a CSS component or at the bottom if it's JS. The gulp task used to make this work assumes that the Bower component contains the `main` property inside of `bower.json` that points the final asset. For example: `"main": "dist/jquery.js",`
 
 ### SASS
-This plugin uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. Inside of this folder you will find a subfolder for external `scss` templates `src/sass/external`. This folder is used by other tasks when generating custom `scss`, for example the `iconfont` task.
-
-The styles manifest is `main.scss` and it supports directory imports.
+This plugin uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
 
 [license-badge]: http://img.shields.io/badge/license-mit-lightgrey.svg?style=flat
 [license-link]: https://github.com/goodeggs/angular-cached-resource/blob/master/LICENSE.md

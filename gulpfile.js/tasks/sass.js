@@ -17,7 +17,6 @@ var gulpif = require('gulp-if');
 var plumber = require('gulp-plumber');
 var rev = require('gulp-rev');
 var sass = require('gulp-sass');
-var sassBulkImport = require('gulp-sass-bulk-import');
 var sharedPaths = require('../shared/paths.js');
 var sharedEvents = require('../shared/events.js');
 var size = require('gulp-size');
@@ -36,7 +35,6 @@ gulp.task('sass', function () {
       errorHandler: sharedEvents.onError
     }))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE === 'dev', sourcemaps.init()))
-    .pipe(sassBulkImport())
     .pipe(sass())
     .pipe(autoprefixer({browsers: ['last 2 version']}))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE === 'dev', sourcemaps.write()))
