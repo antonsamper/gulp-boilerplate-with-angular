@@ -1,12 +1,30 @@
-// Image Path
-$image-path:    '/images';
+/*
+ * Shared Paths
+ */
+
+$image-path: '/images';
 
 
-@import "variables/*";
-@import "external/*";
-@import "modules/*";
+/*
+ * Common
+ */
+
+@import "variables";
+
+
+/*
+ * Base
+ */
 
 @import "scaffolding";
 @import "type";
 
 
+/*
+ * Modules
+ */
+
+@import "modules/buttons";
+@import "modules/images";
+@import "modules/lists";
+@import "modules/iconfont";
