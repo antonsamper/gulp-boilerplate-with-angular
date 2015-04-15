@@ -29,8 +29,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function () {
   return gulp
-    .src(sharedPaths.srcDir + '/sass/*.scss')
-    .pipe(size({showFiles: true}))
+    .src([sharedPaths.srcDir + '/sass/*.scss', '!' + sharedPaths.srcDir + '/sass/_*.scss'])
     .pipe(plumber({
       errorHandler: sharedEvents.onError
     }))
