@@ -22,6 +22,7 @@
     "gulp-if": "1.2.5",
     "gulp-imagemin": "2.0.0",
     "gulp-inject": "1.0.2",
+    "gulp-jscs": "1.5.1",
     "gulp-jshint": "1.9.0",
     "gulp-minify-html": "0.1.8",
     "gulp-plumber": "0.6.6",

@@ -28,6 +28,7 @@ gulp.task('dev', function () {
     'iconfont',
     'sass',
     'jshint',
+    'jscs',
     'concat',
     ['karma', 'minifyHtml', 'imagemin'],
     'move',
@@ -36,7 +37,7 @@ gulp.task('dev', function () {
 
   gulp.watch(sharedPaths.srcIndex, ['minifyHtml']);
   gulp.watch(sharedPaths.srcDir + '/sass/**/*.scss', ['sass']);
-  gulp.watch(sharedPaths.jshintSrc, ['jshint']);
+  gulp.watch(sharedPaths.jshintSrc, ['jshint', 'jscs']);
   gulp.watch(sharedPaths.concatSrc, ['concat']);
   gulp.watch(sharedPaths.srcImages, ['imagemin']);
   gulp.watch(sharedPaths.srcIconFont, ['iconfont']);

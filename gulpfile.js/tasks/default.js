@@ -23,6 +23,7 @@ gulp.task('default', function () {
     'iconfont',
     'sass',
     'jshint',
+    'jscs',
     'concat',
     ['karma', 'minifyHtml', 'imagemin'],
     'revReplace',
