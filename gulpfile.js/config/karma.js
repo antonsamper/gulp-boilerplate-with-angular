@@ -5,17 +5,28 @@
 
 
 /*********************************************************************************
- 1. EXPORTS
+ 1. DEPENDENCIES
+ *********************************************************************************/
+
+var bowerFiles = require('main-bower-files');
+
+
+/*********************************************************************************
+ 2. TASK
  *********************************************************************************/
 
 module.exports = function (config) {
+
+  var files = bowerFiles().concat([
+    'src/js/**/*.js',
+    'src/js/**/*.spec.js'
+  ]);
+
   config.set({
     basePath: __dirname + '/../../',
     frameworks: ['jasmine'],
-    files: [
-      'src/js/**/*.js',
-      'src/js/**/*.spec.js'
-    ],
+    files: files,
     browsers: ['PhantomJS']
   });
+
 };
