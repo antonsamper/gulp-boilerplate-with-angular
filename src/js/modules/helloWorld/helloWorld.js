@@ -2,9 +2,8 @@
 
   app.helloWorld = function () {
     var hello = 'Hello ';
-    var world = 'World!!';
-    var image = 'xbox.jpg';
-    return hello + world + ' and this image:' + image;
+    var world = 'World!';
+    return hello + world;
   };
 
 })(APP);
