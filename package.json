@@ -41,7 +41,7 @@
     "karma-jasmine": "0.3.5",
     "karma-phantomjs-launcher": "0.1.4",
     "main-bower-files": "2.5.0",
-    "phantomjs": "1.9.8",
+    "phantomjs": "1.9.16",
     "require-dir": "0.1.0",
     "run-sequence": "1.0.2"
   }
