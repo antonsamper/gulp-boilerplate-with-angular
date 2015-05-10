@@ -1,13 +1,14 @@
 {
-  "name": "gulp-boilerplate",
+  "name": "gulp-boilerplate-with-angular",
   "author": "Anton Samper Rivaya",
-  "version": "1.1.0",
-  "repository": "https://github.com/antonsamper/gulp-boilerplate",
-  "description": "gulp.js Boilerplate",
+  "version": "0.1.0",
+  "repository": "https://github.com/antonsamper/gulp-boilerplate-with-angular",
+  "description": "gulp.js Boilerplate with AngularJS",
   "scripts": {
     "test": "gulp karma"
   },
   "devDependencies": {
+    "angular-mocks": "1.3.15",
     "bower": "1.4.1",
     "browser-sync": "2.2.1",
     "del": "1.0.0",
@@ -41,6 +42,7 @@
     "karma-jasmine": "0.3.5",
     "karma-phantomjs-launcher": "0.1.4",
     "main-bower-files": "2.5.0",
+    "protractor": "2.0.0",
     "phantomjs": "1.9.16",
     "require-dir": "0.1.0",
     "run-sequence": "1.0.2"
