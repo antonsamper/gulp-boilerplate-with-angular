@@ -1,9 +1,14 @@
 (function (app) {
 
-  app.helloWorld = function () {
+  app.helloWorld = function (planet) {
     var hello = 'Hello ';
-    var world = 'World!';
-    return hello + world;
+    var thing = 'World!';
+
+    if(planet) {
+      thing = 'Planet!'
+    }
+
+    return hello + thing;
   };
 
 })(APP);
