@@ -1,27 +1,27 @@
 <!doctype html>
-<html>
+<html ng-app="app">
 <head>
   <meta charset="utf-8">
-  <title>gulp.js boilerplate</title>
+  <title>gulp.js boilerplate with AngularJS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- bower:css -->
   <!-- endinject -->
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-  <body>
-    <h1 class="heading heading--large align--center margin--medium">gulp.js starter for single page apps</h1>
-    <h2 class="heading heading--medium align--center margin--medium">A clean and simple starter boilerplate for single page applications using gulp.js.</h2>
+<body ng-controller="ExampleCtrl as vm">
+  <h1 class="heading heading--large align--center margin--medium">gulp.js starter for {{vm.use}}</h1>
+  <h2 class="heading heading--medium align--center margin--medium">A clean and simple starter boilerplate for single page applications using gulp.js.</h2>
     <p class="align--center margin--large"><img src="images/gulp-logo.png" alt="gulp.js" width="100" /></p>
     <ul class="list list--inline align--center margin--medium">
       <li>
-        <a href="https://github.com/antonsamper/gulp-boilerplate" class="btn btn--shroom-haze btn--medium">
+        <a href="https://github.com/antonsamper/gulp-boilerplate-with-angular" class="btn btn--shroom-haze btn--medium">
           <span class="icon icon--octicon-mark-github" aria-hidden="true"></span>
           <span>View on Github</span>
         </a>
       </li>
       <li>
-        <a href="https://github.com/antonsamper/gulp-boilerplate/issues" class="btn btn--shroom-haze btn--medium">
+        <a href="https://github.com/antonsamper/gulp-boilerplate-with-angular/issues" class="btn btn--shroom-haze btn--medium">
           <span class="icon icon--octicon-bug" aria-hidden="true"></span>
           <span>Submit an issue</span>
         </a>
