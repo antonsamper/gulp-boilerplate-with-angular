@@ -18,13 +18,19 @@ var sharedPaths = require('../shared/paths.js');
 
 module.exports = function (config) {
 
-  var files = bowerFiles().concat([
+  var basePath = __dirname + '/../..';
+  var files = bowerFiles({
+    paths: {
+      bowerDirectory: basePath + '/bower_components',
+      bowerJson: basePath + '/bower.json'
+    }
+  }).concat([
     sharedPaths.srcDir + '/js/**/*.js',
     sharedPaths.srcDir + '/js/**/*.spec.js'
   ]);
 
   config.set({
-    basePath: __dirname + '/../../',
+    basePath: basePath,
     frameworks: ['jasmine'],
     files: files,
     browsers: ['PhantomJS'],
