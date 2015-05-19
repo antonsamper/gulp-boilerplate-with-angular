@@ -5,7 +5,7 @@ describe('Controller: Example', function () {
 
   beforeEach(inject(function ($rootScope, $controller) {
     $scope = $rootScope.$new();
-    $controller('ExampleCtrl as ctrl', {$scope: $scope});
+    $controller('ExampleCtrl as ctrl', { $scope: $scope });
   }));
 
   it('should contain `use` property', function () {
