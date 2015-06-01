@@ -44,6 +44,7 @@ Task Name     | Description
 `karma`       | Run jasmine tests
 `minifyHtml`  | Inject assets into and compress the main index.html
 `move`        | Move source files to dist
+`ngHtml2Js`   | Create a $templateCache for AngularJS module partials
 `purge`       | Delete the output directory
 `revReplace`  | Rewrite occurrences of file names changed by gulp-rev
 `sass`        | Compile Sass to CSS

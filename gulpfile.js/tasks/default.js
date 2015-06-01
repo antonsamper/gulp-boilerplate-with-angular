@@ -22,6 +22,7 @@ gulp.task('default', function () {
     'purge',
     'iconfont',
     'sass',
+    'ngHtml2Js',
     'jshint',
     'jscs',
     'concat',

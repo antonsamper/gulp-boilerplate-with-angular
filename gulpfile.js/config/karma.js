@@ -36,7 +36,7 @@ module.exports = function (config) {
     files: files,
     browsers: ['PhantomJS'],
     preprocessors: {
-      'src/js/**/!(*spec).js': ['coverage']
+      'src/js/**/!(*spec|*templates).js': ['coverage']
     },
     reporters: ['spec', 'coverage'],
     coverageReporter: {

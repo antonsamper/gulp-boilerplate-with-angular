@@ -16,6 +16,7 @@ module.exports = {
   outputDir: 'dist',
   outputJs: 'dist/js/**/*.js',
   outputCss: 'dist/css/*.css',
+  jsPartialsSrc: 'src/js/**/*.html',
   jshintSrc: [
     'src/js/**/*.js',
     'package.json',
