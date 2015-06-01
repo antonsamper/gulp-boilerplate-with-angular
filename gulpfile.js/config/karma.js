@@ -25,6 +25,7 @@ module.exports = function (config) {
       bowerJson: basePath + '/bower.json'
     }
   }).concat([
+    __dirname + '/karma-helpers.js',
     basePath + '/node_modules/angular-mocks/angular-mocks.js',
     sharedPaths.srcDir + '/js/**/*.js',
     sharedPaths.srcDir + '/js/**/*.spec.js'
