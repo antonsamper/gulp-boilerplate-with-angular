@@ -25,8 +25,7 @@ module.exports = function (config) {
       bowerJson: basePath + '/bower.json'
     }
   }).concat([
-    sharedPaths.srcDir + '/js/**/*.js',
-    sharedPaths.srcDir + '/js/**/*.spec.js'
+    sharedPaths.srcDir + '/js/**/*.js'
   ]);
 
   config.set({
@@ -35,7 +34,7 @@ module.exports = function (config) {
     files: files,
     browsers: ['PhantomJS'],
     preprocessors: {
-      'src/js/**/*.js': ['coverage']
+      'src/js/**/!(*spec).js': ['coverage']
     },
     reporters: ['spec', 'coverage'],
     coverageReporter: {
