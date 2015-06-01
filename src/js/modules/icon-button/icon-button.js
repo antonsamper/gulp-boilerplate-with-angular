@@ -10,11 +10,19 @@
 
 (function (app) {
 
+  var moduleName = 'iconButton';
+
+  try {
+    app = angular.module(moduleName);
+  } catch (e) {
+    app = angular.module(moduleName, []);
+  }
+
   function iconButton() {
 
     return {
       restrict: 'E',
-      template: '<a href="{{href}}" class="btn btn--shroom-haze btn--medium"><span class="icon icon--{{icon}}" aria-hidden="true"></span><span><ng-transclude></ng-transclude></span></a>',
+      templateUrl: '/js/modules/icon-button/icon-button.html',
       transclude: true,
       scope:  {
         href: '@',
@@ -26,4 +34,4 @@
 
   app.directive('iconButton', iconButton);
 
-})(angular.module('iconButton', []));
+})();
