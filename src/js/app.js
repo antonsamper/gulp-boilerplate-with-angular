@@ -8,4 +8,4 @@
 
   app.controller('ExampleCtrl', ExampleCtrl);
 
-})(angular.module('app', []));
+})(angular.module('app', ['iconButton']));
