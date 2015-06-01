@@ -27,8 +27,7 @@ module.exports = function (config) {
   }).concat([
     __dirname + '/karma-helpers.js',
     basePath + '/node_modules/angular-mocks/angular-mocks.js',
-    sharedPaths.srcDir + '/js/**/*.js',
-    sharedPaths.srcDir + '/js/**/*.spec.js'
+    sharedPaths.srcDir + '/js/**/*.js'
   ]);
 
   config.set({
@@ -37,7 +36,7 @@ module.exports = function (config) {
     files: files,
     browsers: ['PhantomJS'],
     preprocessors: {
-      'src/js/**/*.js': ['coverage']
+      'src/js/**/!(*spec).js': ['coverage']
     },
     reporters: ['spec', 'coverage'],
     coverageReporter: {
