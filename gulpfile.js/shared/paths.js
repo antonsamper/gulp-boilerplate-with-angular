@@ -25,7 +25,6 @@ module.exports = {
     '.jscsrc'
   ],
   concatSrc: [
-    'src/js/app.js',
     'src/js/**/*.js',
     '!src/js/**/*.spec.js'
   ]
