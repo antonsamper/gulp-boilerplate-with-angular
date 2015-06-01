@@ -10,7 +10,7 @@ A clean and simple starter boilerplate for single page applications using gulp.j
 [![Build Status][travis-badge]][travis-link]
 
 ###### Boilerplate variations
-- [Boilerplate with AngularJS]((https://github.com/antonsamper/gulp-boilerplate-with-angular))
+- [Base boilerplate](https://github.com/antonsamper/gulp-boilerplate)
 
 ## Installation and Usage
 To start using the boilerplate, first install all the dependencies and then run one of the gulp tasks:
