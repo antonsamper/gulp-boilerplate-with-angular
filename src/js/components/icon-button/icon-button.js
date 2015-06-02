@@ -22,7 +22,7 @@
 
     return {
       restrict: 'E',
-      templateUrl: '/js/modules/icon-button/icon-button.html',
+      templateUrl: '/js/components/icon-button/icon-button.html',
       transclude: true,
       scope:  {
         href: '@',
