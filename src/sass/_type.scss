@@ -1,17 +1,11 @@
-/*
- * Typography
- */
-
+// Typography
 html {
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 62.5%;
 }
 
 
-/*
- * Headings
- */
-
+// Headings
 .heading {
 
   &--large {
@@ -27,9 +21,7 @@ html {
 }
 
 
-/*
- * Alignment helpers
- */
+// Alignment helpers
 .align {
 
   &--center {
