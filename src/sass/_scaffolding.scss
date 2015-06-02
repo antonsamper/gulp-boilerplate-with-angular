@@ -1,7 +1,4 @@
-/*
- * Scaffolding
- */
-
+// Scaffolding
 * {
 
   box-sizing: border-box;
@@ -14,10 +11,7 @@
 }
 
 
-/*
- * Base
- */
-
+// Base
 html {
   height: 100%;
   min-height: 100%;
@@ -35,9 +29,7 @@ body {
 }
 
 
-/*
- * Margins
- */
+// Margins
 .margin {
 
   &--medium {
@@ -51,9 +43,7 @@ body {
 }
 
 
-/*
- * Paddings
- */
+// Paddings
 .padding {
 
   &--medium {
@@ -63,9 +53,7 @@ body {
 }
 
 
-/*
- * Positioning
- */
+// Positioning
 .position {
 
   @media screen and (orientation: landscape) {
