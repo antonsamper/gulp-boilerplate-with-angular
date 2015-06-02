@@ -5,7 +5,7 @@
     var thing = 'World!';
 
     if(planet) {
-      thing = 'Planet!'
+      thing = 'Planet!';
     }
 
     return hello + thing;
