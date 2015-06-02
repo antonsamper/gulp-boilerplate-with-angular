@@ -67,13 +67,13 @@ src/
 		|- iconfont03.svg
 |- images/ 
 |- js/
-	|- modules/
+	|- components/
 		|- helloWorld/
 			|- helloWorld.js
 			|- helloWorld.spec.js
 	|- app.js
 |- sass/
-	|- modules/
+	|- components/
 	|- _variables.scss
 	|- main.scss
 |- index.html 
@@ -82,7 +82,7 @@ src/
 ### Fonts
 The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder will be copied to the `dist/fonts/` folder automatically.
 
-In order to generate a custom icon font, place your svg files inside the `src/fonts/iconfont/` folder and when the `iconfont` task runs, all the svgs inside this folder will be combined to create a custom icon font. Running this task will also generate a sass template file exported to `src/sass/modules/_iconfont.scss` with the `@font-face` declaration and the font classes, for example:
+In order to generate a custom icon font, place your svg files inside the `src/fonts/iconfont/` folder and when the `iconfont` task runs, all the svgs inside this folder will be combined to create a custom icon font. Running this task will also generate a sass template file exported to `src/sass/components/_iconfont.scss` with the `@font-face` declaration and the font classes, for example:
 
 ```
 &--iconfont01:before { content: '\e001'; }
@@ -99,7 +99,7 @@ All the scripts should be placed inside the `src/js/` folder. These files will a
 
 ```
 |- js/
-	|- modules/
+	|- components/
 		|- helloWorld/
 			|- helloWorld.js
 			|- helloWorld.spec.js
