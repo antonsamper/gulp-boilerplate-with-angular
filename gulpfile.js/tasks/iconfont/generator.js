@@ -45,5 +45,5 @@ module.exports = function (codepoints) {
     }))
     .pipe(swig())
     .pipe(rename(scssTemplate.replace('.swig','')))
-    .pipe(gulp.dest(sharedPaths.srcDir + '/sass/modules/'));
+    .pipe(gulp.dest(sharedPaths.srcDir + '/sass/components/'));
 };
