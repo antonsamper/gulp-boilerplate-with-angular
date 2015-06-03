@@ -26,6 +26,25 @@ var angularHelpers = {
 
     return compiledElement;
 
+  },
+
+  compileController: function (controllerName, dependencies) {
+
+    var scope;
+    var controllerAs = controllerName.split(' ')[2];
+
+    inject(function (_$rootScope_, _$controller_) {
+
+      var defaultScope = _$rootScope_.$new();
+      var extendedDeps = angular.extend({$scope: defaultScope}, dependencies);
+
+      scope = extendedDeps.$scope;
+
+      _$controller_(controllerName, extendedDeps);
+
+    });
+
+    return scope[controllerAs];
   }
 
 };

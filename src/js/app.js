@@ -2,7 +2,7 @@
 
   function ExampleCtrl() {
 
-    this.use = 'angular single page apps!';
+    this.use = 'AngularJS SPAs!';
 
   }
 

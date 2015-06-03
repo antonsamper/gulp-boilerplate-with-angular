@@ -1,17 +1,32 @@
-//sample test
-describe('Controller: Example', function () {
+/*
+ * @title app
+ * @description Tests for the main app module
+ */
 
-  beforeEach(module('app'));
 
-  beforeEach(inject(function ($rootScope, $controller) {
-    $scope = $rootScope.$new();
-    $controller('ExampleCtrl as ctrl', { $scope: $scope });
-  }));
+/*********************************************************************************
+ 1. TESTS
+ *********************************************************************************/
 
-  it('should contain `use` property', function () {
-    var use = $scope.ctrl.use;
-    expect(use).toBeDefined();
-    expect(use).toEqual('angular single page apps!');
+describe('The main app module...', function () {
+
+  describe('ExampleCtrl...', function () {
+
+    var compiledController;
+
+    beforeEach(function () {
+
+      module('app');
+
+      compiledController = angularHelpers.compileController('ExampleCtrl as ctrl');
+
+    });
+
+    it('should contain the `use` property', function () {
+      expect(compiledController.use).toBeDefined();
+    });
+
   });
 
 });
+
