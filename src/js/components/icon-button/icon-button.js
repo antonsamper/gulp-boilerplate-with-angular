@@ -18,7 +18,7 @@
     app = angular.module(moduleName, []);
   }
 
-  function iconButton() {
+  function iconButtonDirective() {
 
     return {
       restrict: 'E',
@@ -32,6 +32,6 @@
 
   }
 
-  app.directive('iconButton', iconButton);
+  app.directive('iconButton', iconButtonDirective);
 
 })();
