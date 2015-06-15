@@ -14,6 +14,7 @@ var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var gulp = require('gulp');
 var gulpif = require('gulp-if');
+var ngAnnotate = require('gulp-ng-annotate');
 var plumber = require('gulp-plumber');
 var rev = require('gulp-rev');
 var sharedPaths = require('../shared/paths.js');
@@ -33,6 +34,7 @@ gulp.task('concat', function () {
     .pipe(plumber({
       errorHandler: sharedEvents.onError
     }))
+    .pipe(ngAnnotate())
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', uglify()))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', concat('app.min.js')))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))
