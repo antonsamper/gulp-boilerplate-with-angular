@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="http://gulpjs.com">
-    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  <a href="http://antonsamper.github.io/gulp-boilerplate-with-angular/">
+    <img height="257" width="114" src="http://antonsamper.github.io/gulp-boilerplate-with-angular/images/logo-gulp-with-angular-pink-153d1525.svg">
   </a>
 </p>
 # gulp.js starter for single page apps
