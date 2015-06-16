@@ -37,7 +37,7 @@ Task Name     | Description
 `iconfont`    | Compile icon font and the corresponding Sass
 `browserSync` | Initialise a local server
 `bump`        | Bump the bower and package version numbers
-`concat`      | Concatenate and compress js files
+`concat`      | Concatenate, (ng)annotate and compress js files
 `imagemin`    | Minify images and svg files
 `jscs`        | Detect js style errors
 `jshint`      | Detect js syntax errors
