@@ -17,6 +17,7 @@ module.exports = {
   outputJs: 'dist/js/**/*.js',
   outputCss: 'dist/css/*.css',
   jsPartialsSrc: 'src/js/**/*.html',
+  jsPartialsFile: 'templates',
   jshintSrc: [
     'src/js/**/*.js',
     'package.json',

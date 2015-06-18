@@ -44,7 +44,7 @@ gulp.task('ngHtml2Js', function () {
       },
       prefix: '/js/'
     }))
-    .pipe(concat('templates.js'))
+    .pipe(concat(sharedPaths.jsPartialsFile + '.js'))
     .pipe(gulp.dest(sharedPaths.srcDir + '/js'))
     .pipe(size({showFiles: true}));
 });

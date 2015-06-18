@@ -25,6 +25,9 @@ var size = require('gulp-size');
  *********************************************************************************/
 
 gulp.task('minifyHtml', function () {
+
+  var partials = sharedPaths.jsPartialsFile;
+
   return gulp
     .src(sharedPaths.srcIndex)
     .pipe(size({showFiles: true}))
@@ -33,7 +36,8 @@ gulp.task('minifyHtml', function () {
     }))
     .pipe(inject(gulp.src([
       sharedPaths.outputCss,
-      sharedPaths.outputJs
+      sharedPaths.outputDir + '/js/**/{angular,angular*,!(angular|' + partials + ')*}.js',
+      sharedPaths.outputDir + '/js/' + partials + '.js'
     ], {
       read: false
     }), {
@@ -48,4 +52,5 @@ gulp.task('minifyHtml', function () {
     .pipe(gulp.dest(sharedPaths.outputDir))
     .pipe(browserSync.reload({stream: true}))
     .pipe(size({showFiles: true}));
+
 });
