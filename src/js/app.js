@@ -11,7 +11,7 @@
 (function (app) {
 
   var moduleName = 'app';
-  var dependencies = ['iconButton'];
+  var dependencies = ['iconButton', 'githubStats'];
 
   try {
     app = angular.module(moduleName);

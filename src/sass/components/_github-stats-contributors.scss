@@ -1,0 +1,19 @@
+// Github Stats - Contributors
+.gs-contributor {
+
+  border: 0.2rem solid $color-white;
+  border-radius: 2rem;
+  display: inline-block;
+  margin: 0 .5rem 0 .3rem;
+  position: relative;
+  top: 1rem;
+  width: 3rem;
+
+  @media screen and (min-width: $breakpoint-small) {
+    transition: transform 0.1s linear;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+}

@@ -1,6 +1,6 @@
 /*
  * @title iconButton
- * @description Tests for the iconButton directive
+ * @description Tests for the iconButton component
  */
 
 
