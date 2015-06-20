@@ -1,7 +1,7 @@
 {
   "name": "gulp-boilerplate-with-angular",
   "author": "Anton Samper Rivaya",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "repository": "https://github.com/antonsamper/gulp-boilerplate-with-angular",
   "description": "gulp.js Boilerplate with AngularJS",
   "scripts": {

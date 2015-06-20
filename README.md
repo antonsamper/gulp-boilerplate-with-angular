@@ -116,6 +116,6 @@ This boilerplate supports bower components. The components are installed in the 
 This plugin uses the `scss` format for Sass. All `scss` files should be placed in the `src/sass/` folder. The styles manifest is `main.scss`.
 
 [license-badge]: http://img.shields.io/badge/license-mit-lightgrey.svg?style=flat
-[license-link]: https://github.com/goodeggs/angular-cached-resource/blob/master/LICENSE.md
-[travis-badge]: https://travis-ci.org/antonsamper/gulp-boilerplate.svg?branch=master
-[travis-link]: https://travis-ci.org/antonsamper/gulp-boilerplate
+[license-link]: https://github.com/antonsamper/gulp-boilerplate-with-angular/blob/master/LICENSE
+[travis-badge]: https://travis-ci.org/antonsamper/gulp-boilerplate-with-angular.svg?branch=master
+[travis-link]: https://travis-ci.org/antonsamper/gulp-boilerplate-with-angular
