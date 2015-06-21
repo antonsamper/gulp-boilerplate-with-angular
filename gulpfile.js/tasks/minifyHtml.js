@@ -36,8 +36,7 @@ gulp.task('minifyHtml', function () {
     }))
     .pipe(inject(gulp.src([
       sharedPaths.outputCss,
-      sharedPaths.outputDir + '/js/**/{angular,angular*,!(angular|' + partials + ')*}.js',
-      sharedPaths.outputDir + '/js/' + partials + '.js'
+      sharedPaths.outputDir + '/js/**/{angular,angular*,!(angular)*}.js'
     ], {
       read: false
     }), {

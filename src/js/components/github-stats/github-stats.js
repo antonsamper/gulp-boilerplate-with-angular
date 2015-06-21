@@ -11,11 +11,15 @@
 (function (app) {
 
   var moduleName = 'githubStats';
+  var moduleDependencies = ['ngResource'];
 
   try {
     app = angular.module(moduleName);
+    moduleDependencies.forEach(function (dependency) {
+      app.requires.push(dependency);
+    });
   } catch (e) {
-    app = angular.module(moduleName, ['ngResource']);
+    app = angular.module(moduleName, moduleDependencies);
   }
 
   function GithubStatsDirective() {
