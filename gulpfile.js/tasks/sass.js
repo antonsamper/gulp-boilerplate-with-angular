@@ -35,7 +35,7 @@ gulp.task('sass', function () {
     }))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE === 'dev', sourcemaps.init()))
     .pipe(sass())
-    .pipe(autoprefixer({browsers: ['last 2 version']}))
+    .pipe(autoprefixer({browsers: ['last 2 versions']}))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE === 'dev', sourcemaps.write()))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', csso()))
     .pipe(gulpif(process.env.ENVIRONMENT_TYPE !== 'dev', rev()))
