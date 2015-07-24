@@ -1,7 +1,7 @@
 {
   "name": "gulp-boilerplate-with-angular",
   "author": "Anton Samper Rivaya",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "gulp.js Boilerplate with AngularJS",
   "license": "MIT",
   "ignore": [
@@ -12,7 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.4.1",
-    "angular-resource": "1.4.1"
+    "angular": "1.4.3",
+    "angular-resource": "1.4.3"
   }
 }
