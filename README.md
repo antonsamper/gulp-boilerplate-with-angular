@@ -16,8 +16,7 @@ A clean and simple starter boilerplate for single page applications using gulp.j
 To start using the boilerplate, first install all the dependencies and then run one of the gulp tasks:
 
  ```
- $ npm i
- $ bower i
+ $ npm i (bower components installed automatically)
  $ gulp dev
  ```
 

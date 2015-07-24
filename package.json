@@ -5,7 +5,8 @@
   "repository": "https://github.com/antonsamper/gulp-boilerplate-with-angular",
   "description": "gulp.js Boilerplate with AngularJS",
   "scripts": {
-    "test": "gulp karmaSingle"
+    "test": "gulp karmaSingle",
+    "postinstall": "bower i"
   },
   "devDependencies": {
     "angular-mocks": "1.4.1",
