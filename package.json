@@ -9,7 +9,7 @@
     "postinstall": "bower i"
   },
   "devDependencies": {
-    "angular-mocks": "1.4.1",
+    "angular-mocks": "1.4.3",
     "bower": "1.4.1",
     "browser-sync": "2.2.1",
     "del": "1.0.0",
