@@ -1,6 +1,0 @@
-{
-  "disallowMultipleVarDecl": true,
-  "disallowCapitalizedComments": true,
-  "requireSpacesInsideObjectBrackets": "all",
-  "excludeFiles": ["package.json", "bower.json", ".jscsrc"]
-}

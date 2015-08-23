@@ -33,13 +33,12 @@ Task Name    | Description
 
 Task Name     | Description
 ------------- | ----------------------------------------------------
-`iconfont`    | Compile icon font and the corresponding Sass
 `browserSync` | Initialise a local server
 `bump`        | Bump the bower and package version numbers
 `concat`      | Concatenate, (ng)annotate and compress js files
+`eslint`      | Detect js syntax and style errors
+`iconfont`    | Compile icon font and the corresponding Sass
 `imagemin`    | Minify images and svg files
-`jscs`        | Detect js style errors
-`jshint`      | Detect js syntax errors
 `karma`       | Run jasmine tests
 `minifyHtml`  | Inject assets into and compress the main index.html
 `move`        | Move source files to dist

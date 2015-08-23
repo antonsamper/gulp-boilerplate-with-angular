@@ -1,6 +1,6 @@
 /*
- * @title Jscs
- * @description A task detect js style errors
+ * @title ESLint
+ * @description A task for javascript linting
  * @example (cli) gulp jscs
  */
 
@@ -10,7 +10,7 @@
  *********************************************************************************/
 
 var gulp = require('gulp');
-var jscs = require('gulp-jscs');
+var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
 var sharedPaths = require('../shared/paths.js');
 var sharedEvents = require('../shared/events.js');
@@ -20,11 +20,12 @@ var sharedEvents = require('../shared/events.js');
  2. TASK
  *********************************************************************************/
 
-gulp.task('jscs', function () {
+gulp.task('eslint', function () {
   return gulp
-    .src(sharedPaths.jshintSrc)
+    .src(sharedPaths.eslintSrc)
     .pipe(plumber({
       errorHandler: sharedEvents.onError
     }))
-    .pipe(jscs());
+    .pipe(eslint())
+    .pipe(eslint.format());
 });
