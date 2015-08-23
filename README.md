@@ -94,7 +94,7 @@ This auto generated file is explictily included in the Sass manifest.
 All images should be placed inside the `src/images/` folder. This is for consistency as opposed to a limitation enforced by the `imagemin` task as this task will look for and minify all images inside the `src/` folder that have any of the following extensions: `.jpg` `.png` `.gif` `.svg`
 
 ### JS
-All the scripts should be placed inside the `src/js/` folder. These files will all be `jshint`'ed and then injected into `index.html`. The current setup assumes a modular approach when adding new features so that everything that is require for a module is inside of its own folder - this can include tests, templates and specific styles if needed. For example:
+All the scripts should be placed inside the `src/js/` folder. These files will all be linted and then injected into `index.html`. The current setup assumes a modular approach when adding new features so that everything that is require for a module is inside of its own folder - this can include tests, templates and specific styles if needed. For example:
 
 ```
 |- js/
