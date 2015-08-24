@@ -3,7 +3,7 @@
     <img height="257" width="114" src="http://antonsamper.github.io/gulp-boilerplate-with-angular/images/logo-gulp-with-angular-pink-153d1525.svg">
   </a>
 </p>
-# gulp.js starter for single page apps
+# gulp.js starter for AngularJS apps
 A clean and simple starter boilerplate for single page applications using gulp.js.
 
 [![MIT License][license-badge]][license-link]
