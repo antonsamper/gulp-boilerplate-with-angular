@@ -26,6 +26,8 @@ module.exports = {
     '.eslintrc'
   ],
   concatSrc: [
+    'src/js/utilities/common/**/*.js',
+    'src/js/utilities/**/*.js',
     'src/js/**/*.js',
     '!src/js/**/*.spec.js'
   ]
