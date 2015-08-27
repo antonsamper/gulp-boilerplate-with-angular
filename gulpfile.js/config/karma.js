@@ -27,6 +27,8 @@ module.exports = function (config) {
   }).concat([
     __dirname + '/karma-helpers.js',
     basePath + '/node_modules/angular-mocks/angular-mocks.js',
+    sharedPaths.srcDir + '/js/**/common/**/*.js',
+    sharedPaths.srcDir + '/js/**/angular/**/*.js',
     sharedPaths.srcDir + '/js/**/*.js'
   ]);
 
