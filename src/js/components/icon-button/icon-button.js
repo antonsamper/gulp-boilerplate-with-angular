@@ -8,15 +8,7 @@
  1. MODULE DEFINITION
  *********************************************************************************/
 
-(function (app) {
-
-  var moduleName = 'iconButton';
-
-  try {
-    app = angular.module(moduleName);
-  } catch (e) {
-    app = angular.module(moduleName, []);
-  }
+(function () {
 
   function IconButtonDirective() {
 
@@ -32,6 +24,8 @@
 
   }
 
-  app.directive('iconButton', IconButtonDirective);
+  angularUtilities
+    .initComponent('iconButton', ['githubStats'])
+    .directive('iconButton', IconButtonDirective);
 
 })();

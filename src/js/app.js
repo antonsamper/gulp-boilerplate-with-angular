@@ -10,19 +10,12 @@
 
 (function (app) {
 
-  var moduleName = 'app';
-  var dependencies = ['iconButton', 'githubStats'];
-
-  try {
-    app = angular.module(moduleName);
-  } catch (e) {
-    app = angular.module(moduleName, dependencies);
-  }
-
   function ExampleCtrl() {
     this.use = 'AngularJS SPAs!';
   }
 
-  app.controller('ExampleCtrl', ExampleCtrl);
+  angularUtilities
+    .initComponent('app', ['iconButton', 'githubStats'])
+    .controller('ExampleCtrl', ExampleCtrl);
 
 })();

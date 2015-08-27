@@ -8,19 +8,7 @@
  1. MODULE DEFINITION
  *********************************************************************************/
 
-(function (app) {
-
-  var moduleName = 'githubStats';
-  var moduleDependencies = ['ngResource'];
-
-  try {
-    app = angular.module(moduleName);
-    moduleDependencies.forEach(function (dependency) {
-      app.requires.push(dependency);
-    });
-  } catch (e) {
-    app = angular.module(moduleName, moduleDependencies);
-  }
+(function () {
 
   function GithubStatsDirective() {
 
@@ -74,7 +62,8 @@
 
   }
 
-  app
+  angularUtilities
+    .initComponent('githubStats', ['ngResource'])
     .directive('githubStats', GithubStatsDirective)
     .factory('GithubStatsService', GithubStatsService);
 
