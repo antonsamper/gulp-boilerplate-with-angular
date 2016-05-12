@@ -1,3 +1,4 @@
+###### [OUTDATED] This repo is a little outdated but do not fear, it will be getting an update soon
 <p align="center">
   <a href="http://antonsamper.github.io/gulp-boilerplate-with-angular/">
     <img height="257" width="114" src="http://antonsamper.github.io/gulp-boilerplate-with-angular/images/logo-gulp-with-angular-pink-153d1525.svg">
